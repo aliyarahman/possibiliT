@@ -1,4 +1,5 @@
 venv
 *.pyc
+manage.py
 staticfiles
 possibiliT/devsettings.py
