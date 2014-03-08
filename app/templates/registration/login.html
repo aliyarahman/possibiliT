@@ -1,9 +1,9 @@
 {% extends "login_base.html" %}
 {% block content %}
 
+<br><br><br><br><br><br>
 <div class="pageheader">
-	<h2>PossibiliT*</h2>
-	<p>Trans* as far as the eye can see</p>
+	<span class="headline">possibiliT*</span><br><span class="tagline">Trans* as far as the eye can see</span>
 </div>
 
 <div class="loginerror">
@@ -13,21 +13,17 @@
 </div>
 
 <div class="contentholder">
-        <h3>Create a new account:</h3>
-	<p><a href="{% url 'createprofile' %}" class="">Start your profile</a></p>
+	<div id="loginbox">
 
-	<h3>Or log in to your existing profile:</h3>
-	<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
-	{% csrf_token %}
+		<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+		{% csrf_token %}
 
-		<div id="loginbox">
 			<p>{{form.username.label}} {{form.username }}
 			<p>{{form.password.label }} {{form.password }}
-			<p><input type="submit" value="Log in" class="btn btn-primary"></br>
+			<p><input type="submit" value="Log in" class="btn btn-primary"> <b>or</b>  <button name="next">Create a new profile</button>
+</br>
 			<input type="hidden" name="next" value="{{ next }}" />
 			</form>
-		</div>
-
 	</div>
 </div>
 	{% endblock %}

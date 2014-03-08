@@ -1,0 +1,38 @@
+body			{background-color: #33242C; color: #EBE1A4; font-family: Arial; font-size: 18px;}
+a			{text-decoration: none; color: #460041;}
+input[type="submit"]	{border-radius: 4px;}
+.pageheader		{position: fixed; right: 200px; top: 150px; display: inline; font-size: 48px; text-align: right;}
+.tagline		{color: #D89700; font-size: 24px;}
+.contentholder		{width: 700px; text-align: center; display: inline-block;}
+
+#loginbox		{display: inline-block; background-color: #D89700; color: #33242C; text-align: center; opacity: 0.7;
+			position: fixed; top: 300px; right: 200px; border-radius: 8px; padding: 20px; } 
+#loginbox:hover		{opacity: 1}
+#loginbox a		{color: #33242C}
+#loginbox input, #loginbox button		{font-size: 18px; margin-left: 10px; background-color: #EBE1A4; border: 3px solid #33242C; border-radius: 8px; opacity:0.8; 
+    -webkit-box-shadow: inset 0 0 6px 
+	    rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 6px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 6px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}
+
+
+.navbar			{background-color: #460041; text-align: right; padding-right: 50px; color: #460041;
+			position: fixed; top:0px; left: 0px; width: 100%; height: 50px;}
+.nav			{display: inline-block; padding-right: 50px;}
+.navouter		{background-color: black; position: fixed; right: 0px; top: 50px;width: 100%; height: 150px; 
+			opacity: 0.2;}
+.nav li			{list-style: none}
+.nav a			{text-decoration: none; color: #EBE1A4;}
+
+
+
+#footer			{background-color: #460041; color: #780083; position: fixed; left: 0px; bottom: 0px; height: 60px; width: 100%; padding-left: 30px;}
