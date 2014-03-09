@@ -20,7 +20,7 @@
 
 			<p>{{form.username.label}} {{form.username }}
 			<p>{{form.password.label }} {{form.password }}
-			<p><input type="submit" value="Log in"> <b>or</b>  <button name="next" type="button" onClick="location.href ='{% url "createprofile" %}'">Create a new profile</button>
+			<p><input type="submit" value="Log in"> <b>or</b>  <button name="next" type="button" onClick="location.href ='{% url "basic_info" %}'">Create a new profile</button>
 </br>
 			<input type="hidden" name="next" value="{{ next }}" />
 			</form>
