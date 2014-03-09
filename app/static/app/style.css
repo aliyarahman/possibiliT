@@ -38,6 +38,13 @@ input[type="submit"]	{border-radius: 4px;}
 
 #footer			{background-color: #460041; color: #780083; position: fixed; left: 0px; bottom: 0px; height: 60px; width: 100%; padding-left: 30px; text-align: center;}
 
+
+.progressbar	{ margin-top: 15px; margin-bottom: 0px;}
+.progressbarinner	{ margin-top: -10px;}
+.progressbarinner li	{display: inline; list-style: bullet;}
+.progressbar .done	{ color: #D89700}
+
+
 .fieldwrapper input	{background-color: #E8C166; font-size: 18px; display: inline-block; padding: 5px; margin-left: 5px; border: none; height: 23px; border-radius: 4px;}
 .fieldwrapper li	{display: inline-block}
 .fieldwrapper select{font-size: 18px; border: none; background-color: #E8C166; line-height: 45px; padding: 5px; margin-left: 5px; border-radius: 4px;}
