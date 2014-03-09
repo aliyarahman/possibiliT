@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse
-from app.models import Profile
+from app.models import BasicInfo, Identities, LookingFor, MoreAbout, ContactInfo, Settings, Message
+from app.forms import BasicInfoForm, IdentitiesForm, LookingForForm, CreateAccountForm, MoreAboutForm, ContactInfoForm, SettingsForm, MessageForm
 #from clfapplication.forms import ProfileForm
 
 
