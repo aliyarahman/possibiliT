@@ -3,11 +3,31 @@
 
 <div class="pageheader"><span class="headline">Create Your Profile</span><br><span class="tagline">Progress bar goes here: [Part 1 / 1].</span></div>
 
-<form action="{% url 'create_account' %}">
-	<div class="tagline">Who are you looking for?</div>
-	<br><br><p>Questions.</p>
-	<p>More questions. And stuff.</p>
-    	<br><br><br><input type="submit" name="next" value="Next section"></input>
+
+<div class="tagline">Tell us who you're looking for...</div>
+<form class="lookingforform" method="POST" action="{% url 'looking_for' %}">{% csrf_token %}
+
+{{ form.name_of_field.errors }} 
+<ul class="errorlist">
+    <li>Hmm, Something's missing.</li>
+</ul>
+
+	{{ form.non_field_errors }}
+	
+	<div>
+		<br><br><div class="fieldwrapper identity">Their gender: {{form.gender}}  </div>
+
+		<br><br><div class="fieldwrapper identity">Their orientation: {{form.orientation}} </div>
+
+		<br><br><div class="fieldwrapper">Their age: between {{form.age_lower}} and {{form.age_upper}} </div>
+
+		<br><br><div class="fieldwrapper" identity>Located within {{form.within_miles_of_zip}} miles of zipcode {{form.near_zip}} </div>
+
+	</div>
+
+	
+	<br><br><br><input type="submit" name="next" value="Next section"></input>
 </form>
+
 
 {% endblock %}

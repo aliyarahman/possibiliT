@@ -33,16 +33,40 @@ def index(request):
 
 #Profile creation views
 def basic_info(request):
-        return render(request, 'basic_info.html')
+	if request.method == 'POST':
+		form = BasicInfoForm(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('../identities')
+	else:
+		form = BasicInfoForm()
+	return render(request, 'basic_info.html', {'form': form})
 
 def identities(request):
-        return render(request, 'identities.html')
+	if request.method == 'POST':
+		form = IdentitiesForm(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('../looking_for')
+	else:
+		form = IdentitiesForm()
+	return render(request, 'identities.html', {'form': form})
 
 def looking_for(request):
-        return render(request, 'looking_for.html')
+	if request.method == 'POST':
+		form = LookingForForm(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('../create_account')
+	else:
+		form = LookingForForm()
+	return render(request, 'looking_for.html', {'form': form})
 
 def create_account(request):
-        return render(request, 'create_account.html')
+	if request.method == 'POST':
+		form = CreateAccountForm(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('../index')
+	else:
+		form = CreateAccountForm()
+	return render(request, 'create_account.html', {'form': form})
 
 
 #Existing user profile views

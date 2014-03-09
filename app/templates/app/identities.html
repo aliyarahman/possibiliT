@@ -3,12 +3,30 @@
 
 <div class="pageheader"><span class="headline">Create Your Profile</span><br><span class="tagline">Progress bar goes here: [Part 1 / 1].</span></div>
 
-<form action="{% url 'looking_for' %}">
-	<div class="tagline">How do you identify?</div>
+<div class="tagline">Tell us how you identify...</div>
 
-	<br><br><p>Questions.</p>
-	<p>More questions. And stuff.</p>
-    	<br><br><br><input type="submit" name="next" value="Next section"></input>
+<form class="identitiesform" method="POST" action="{% url 'identities' %}">{% csrf_token %}
+
+{{ form.name_of_field.errors }} 
+<ul class="errorlist">
+    <li>Hmm, Something's missing.</li>
+</ul>
+
+	{{ form.non_field_errors }}
+	
+	<div>
+		<br><br><div class="fieldwrapper identity">What's your gender? {{form.gender}} Are you out about this? {{form.outness_gender}} </div>
+
+		<br><br><div class="fieldwrapper identity">What's your orientation? {{form.orientation}} Are you out about this? {{form.outness_orientation}} </div>
+
+		<br><br><div class="fieldwrapper">Are you single? {{form.relationship_status}} </div>
+
+		<br><br><div class="fieldwrapper" identity>What's your ethnicity? {{form.ethnicity}} </div>
+
+	</div>
+
+
+	<br><br><br><input type="submit" name="next" value="Next section"></input>
 </form>
 
 {% endblock %}

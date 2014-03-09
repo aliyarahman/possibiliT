@@ -4,22 +4,22 @@ from django.contrib.auth.models import User
 from app.models import BasicInfo, Identities, LookingFor, MoreAbout, ContactInfo, Settings, Message
 
 class BasicInfoForm(Form):
-	over18 = BooleanField()
-	birth_day = ChoiceField()
-	birth_month = ChoiceField()
-	birth_year = ChoiceField()
+	over18 = ChoiceField(widget=RadioSelect, choices=((True,'Yes'),(False,'No')))
+	birth_month = ChoiceField(choices=((1,'January'),(2,'February'),(3,'March'),(4,'April'),(5,'May'),(6,'June'),(7,'July'),(8,'August'),(9,'September'),(10,'October'),(11,'November'),(12,'December')))
+	birth_day = ChoiceField(choices=((1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'),(6,'6'),(7,'7'),(8,'8'),(9,'9'),(10,'10'),(11,'11'),(12,'12'),(13,'13'),(14,'14'),(15,'15'),(16,'16'),(17,'17'),(18,'18'),(19,'19'),(20,'20'),(21,'21'),(22,'22'),(23,'23'),(24,'24'),(25,'25'),(26,'26'),(27,'27'),(28,'28'),(29,'29'),(30,'30'),(31,'31')))
+	birth_year = IntegerField()
 	city = CharField()
-	state = ChoiceField()
-	country = ChoiceField()
+	state = ChoiceField(choices=(('AL','AL'),('AK','AK'),('AZ','AZ'),('AR','AR'),('CA','CA'),('CO','CO'),('CT','CT'),('DC','DC'),('DE','DE'),('FL','FL'),('GA','GA'),('HI','HI'),('ID','ID'),('IL','IL'),('IN','IN'),('IA','IA'),(17,'KS'),('KY','KY'),('LA','LA'),('ME','ME'),('MD','MD'),('MA','MA'),('MI','MI'),('MN','MN'),('MS','MS'),('MO','MO'),('MT','MT'),('NE','NE'),('NV','NV'),('NH','NH'),('NJ','NJ'),('NM','NM'),('NY','NY'),('NC','NC'),('ND','ND'),('OH','OH'),('OK','OK'),('OR','OR'),('PA','PA'),('RI','RI'),('SC','SC'),('SD','SD'),('TN','TN'),('TX','TX'),('UT','UT'),('VT','VT'),('VA','VA'),('WA','WA'),('WV','WV'),('WI','WI'),('WY','WY'),('NONE','Other')))
+	country = CharField()
 	zipcode = IntegerField()
 
 
 class IdentitiesForm(Form):
 	gender = CharField()
 	orientation = CharField()
-   	outness_gender = ChoiceField(required=True, choices=(('1', 'Everyone'),('2', 'Family/Friends'),('3', 'Just to friends'), ('4', 'Just to family'), ('5','Discreet')))
-	outness_orientation = ChoiceField(required=True, choices=(('1', 'Everyone'),('2', 'Family/Friends'),('3', 'Just to friends'), ('4', 'Just to family'), ('5','Discreet')))
-	relationship_status = ChoiceField(choices=(('1','Single - monogamous'),('2', 'Single - polyamorous'),('3','Not single - monogamous'),('4', 'Non single - polyamorous')))
+   	outness_gender = ChoiceField(required=True, choices=(('1', 'To everyone'),('2', 'To family/friends'),('3', 'Just to friends'), ('4', 'Just to family'), ('5','Discreet')))
+	outness_orientation = ChoiceField(required=True, choices=(('1', 'To everyone'),('2', 'To family/friends'),('3', 'Just to friends'), ('4', 'Just to family'), ('5','Discreet')))
+	relationship_status = ChoiceField(choices=(('1','Single and monogamous'),('2', 'Single and not monogamous'),('3','Not single and monogamous'),('4', 'Not single and not monogamous')))
 	ethnicity = CharField()
 
 
@@ -44,7 +44,7 @@ class MoreAboutForm(Form):
 	interests_dating = CharField()
 	about_me = CharField(widget=Textarea())
 	from_city = CharField()
-	from_state = CharField()
+	from_state = ChoiceField(choices=((' ',' '),('AL','AL'),('AK','AK'),('AZ','AZ'),('AR','AR'),('CA','CA'),('CO','CO'),('CT','CT'),('DC','DC'),('DE','DE'),('FL','FL'),('GA','GA'),('HI','HI'),('ID','ID'),('IL','IL'),('IN','IN'),('IA','IA'),(17,'KS'),('KY','KY'),('LA','LA'),('ME','ME'),('MD','MD'),('MA','MA'),('MI','MI'),('MN','MN'),('MS','MS'),('MO','MO'),('MT','MT'),('NE','NE'),('NV','NV'),('NH','NH'),('NJ','NJ'),('NM','NM'),('NY','NY'),('NC','NC'),('ND','ND'),('OH','OH'),('OK','OK'),('OR','OR'),('PA','PA'),('RI','RI'),('SC','SC'),('SD','SD'),('TN','TN'),('TX','TX'),('UT','UT'),('VT','VT'),('VA','VA'),('WA','WA'),('WV','WV'),('WI','WI'),('WY','WY'),('NONE','Other')))
 	from_country = CharField()
 	height = CharField()
 	bodytype = CharField()

@@ -3,11 +3,27 @@
 
 <div class="pageheader"><span class="headline">Create Your Profile</span><br><span class="tagline">Progress bar goes here: [Part 1 / 1].</span></div>
 
-<form action="{% url 'identities' %}">
-	<div class="tagline">Basic info</div>
-	<br><br><p>Questions.</p>
-	<p>More questions. And stuff.</p>
-    	<br><br><br><input type="submit" name="next" value="Next section"></input>
+<div class="tagline">Basic info</div>
+
+<br><br><form method="POST" action="{% url 'basic_info' %}">{% csrf_token %}
+{{ form.name_of_field.errors }} 
+<ul class="errorlist">
+    <li>Hmm, Something's missing.</li>
+</ul>
+
+	{{ form.non_field_errors }}
+	
+	<div>
+		<div class="fieldwrapper">Are you over 18? {{form.over18}} </div>
+
+		<br><br><div class="fieldwrapper">When is your birthday (once you create your account, you can choose to hide or show this publicly)?
+		<br><ul>{{form.birth_month}} {{form.birth_day}} {{form.birth_year}} </div></ul>
+
+		<br><br><div class="fieldwrapper">Where do you live now?
+		<p><ul>City {{form.city}} State {{form.state}} Zip {{form.zipcode}}</p> <p>Country {{form.country}}</p></ul> </div>
+	</div>
+
+    <br><br><input type="submit" name="next" value="Next section"></input>
 </form>
 
 {% endblock %}

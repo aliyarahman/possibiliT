@@ -37,3 +37,15 @@ input[type="submit"]	{border-radius: 4px;}
 
 
 #footer			{background-color: #460041; color: #780083; position: fixed; left: 0px; bottom: 0px; height: 60px; width: 100%; padding-left: 30px; text-align: center;}
+
+.fieldwrapper input	{background-color: #E8C166; font-size: 18px; display: inline-block; padding: 5px; margin-left: 5px; border: none; height: 23px; border-radius: 4px;}
+.fieldwrapper li	{display: inline-block}
+.fieldwrapper select{font-size: 18px; border: none; background-color: #E8C166; line-height: 45px; padding: 5px; margin-left: 5px; border-radius: 4px;}
+.fieldwrapper input[type="text"] {width: 150px;}
+.fieldwrapper input[type="number"]	{width: 100px;}
+
+.identitiesform, .createaccountform	{width: 1000px}
+.identitiesform input[type="text"], .lookingforform input[type="text"] {margin-right: 50px; width: 250px;}
+.errorlist li	{color: red}
+.lookingforform input[type="number"]	{width: 70px}
+.createaccountform	input[type="text"], .createaccountform input[type="password"], .creataccountform input[type="email"]	{width: 250px;}
