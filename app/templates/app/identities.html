@@ -7,11 +7,6 @@
 
 <form class="identitiesform" method="POST" action="{% url 'identities' %}">{% csrf_token %}
 
-{{ form.name_of_field.errors }} 
-<ul class="errorlist">
-    <li>Hmm, Something's missing.</li>
-</ul>
-
 	{{ form.non_field_errors }}
 	
 	<div>

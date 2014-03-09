@@ -8,10 +8,6 @@
 <form class="createaccountform" method="POST" action="{% url 'create_account' %}">{% csrf_token %}
 
 
-<ul class="errorlist">
-    <li>Hmm, Something's missing.</li>
-</ul>
-
 	{{ form.non_field_errors }}
 	
 	<div>
