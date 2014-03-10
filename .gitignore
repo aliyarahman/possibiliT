@@ -1,6 +1,7 @@
 venv
 *.pyc
 manage.py
+devmanage.py
 staticfiles
 possibiliT/devsettings.py
 supplemental-info

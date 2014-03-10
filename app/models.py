@@ -28,6 +28,7 @@ class BasicInfo(models.Model):
 		return self.id
 
 class Identities(models.Model):
+	user = models.OneToOneField(User)
         gender = models.TextField()
         orientation = models.TextField()
         outness_gender = models.IntegerField()
@@ -41,8 +42,8 @@ class Identities(models.Model):
 
 class LookingFor(models.Model):
         user = models.OneToOneField(User)
-        gender = models.TextField()
-        orientation = models.TextField()
+        lookingfor_gender = models.TextField()
+        lookingfor_orientation = models.TextField()
         age_lower = models.IntegerField()
         age_upper = models.IntegerField()
         near_zip = models.IntegerField(5)
@@ -71,6 +72,7 @@ class MoreAbout(models.Model):
 
 
 class ContactInfo(models.Model):
+	user = models.OneToOneField(User)
 	phone = models.CharField(max_length=15)
 	street_address = models.CharField(max_length=90)
 	alternate_email = models.EmailField()

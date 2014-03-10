@@ -18,13 +18,13 @@
 	{{ form.non_field_errors }}
 	
 	<div>
-		<br><br><div class="fieldwrapper identity">Their gender: {{form.gender}}  </div>
+		<br><br><div class="fieldwrapper identity">Their gender: {{form.lookingfor_gender}}  </div>
 
-		<br><br><div class="fieldwrapper identity">Their orientation: {{form.orientation}} </div>
+		<br><br><div class="fieldwrapper identity">Their orientation: {{form.lookingfor_orientation}} </div>
 
 		<br><br><div class="fieldwrapper">Their age: between {{form.age_lower}} and {{form.age_upper}} </div>
 
-		<br><br><div class="fieldwrapper" identity>Located within {{form.within_miles_of_zip}} miles of zipcode {{form.near_zip}} </div>
+		<br><br><div class="fieldwrapper" identity>Located within {{form.within_range_of_zip}} miles of zipcode {{form.near_zip}} </div>
 
 	</div>
 

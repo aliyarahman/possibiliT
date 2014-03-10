@@ -24,12 +24,12 @@ class IdentitiesForm(Form):
 
 
 class LookingForForm(Form):
-	gender = CharField(required=True)
-	orientation = CharField(required=True)
+	lookingfor_gender = CharField(required=True)
+	lookingfor_orientation = CharField(required=True)
 	age_lower = IntegerField()
 	age_upper = IntegerField()
 	near_zip = IntegerField()
-	within_miles_of_zip = IntegerField()
+	within_range_of_zip = IntegerField()
 
 
 class CreateAccountForm(Form):
